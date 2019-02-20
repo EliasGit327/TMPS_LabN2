@@ -1,33 +1,20 @@
-# TMPS_LabN1
+# TMPS_LabN2
 ### Java version 8 update 201 (Build 1.8.0_201-b09)
-*Simple Factory, Abstract Factory, Builder, Singleton, Prototype.*
+* Adapter, Bridge, Facade, Flyweight, Proxy.*
 ___
-It is a laboratory work by number 1, where 5 template have been used.
+It is a laboratory work by number 2, where 5 template have been used.
 The conception of the project:
-We have a singleton (An interface which creates only ones class, in other cases, returns pointer to existing one already)
-Abastact Factory class created from interface creates object which extends Vehicle from interface.
-For creation of vehicle we need parts (Glass, Body, Wheels, and others), they can be created by Builder template:
+We have a VERY simplified game structure. For saving resources we used Flyweight pattern for trees. Its helps us to save resources. At structural point any tree consists of parameters which repeats every time, so we can save resources by just having a referenece to object having those parameters.
+
+
+We create a type of tree, and after it we create a tree with parameters where one of them is reference to out tree type.
 ```
-FactoryName.createPartName();
+ TreeType sakuraType = new TreeType(String name, String color);
+ Tree sakura = new Tree(int x, int y, int z, int angleX, int angleY, int size, TreeType typeOfTree);
 ```
-If Factory has enoght parts it can create vehicle and uses one type of each part.
+Example:
 ```
-Vehicle vehicle = FactoryName.createVehicle( String nameOfVehicle );
-```
-After vehicle was created you can set parameters for it (String name, Double price)
-```
-vehicle.name = "some name";
-vehicle.price = 9999999.99;
+ TreeType sakuraType = new TreeType("Sakura", "Pink");
+ Tree sakura = new Tree(34, 50, -3, 12, 3, 1, sakuraType);
 ```
 
-You can clone vehicle which you like, with the same params.
-
-```
-Vehicle vehicleClone = vehicle.clone();
-```
-
-Simple Factory creates in project Shop Logic. This means that, you have main class Shop which you extend with new class
-and add your functionality to existing one. In this project Shops sells vehicles created by Factories, getting money and sest
-to vehicles Null.
-
-![Visualisaton](https://i.ibb.co/hVW3BsL/Help.jpg)
