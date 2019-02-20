@@ -18,6 +18,7 @@ public class Facade {
         int xSize, ySize, zSize;
 
         MapOfWorld( String nameOfWorld,int xSize, int ySize, int zSize, Time time ) {
+
             this.nameOfWorld = nameOfWorld;
             this.xSize = xSize;
             this.ySize = ySize;
