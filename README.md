@@ -33,5 +33,16 @@ Kaiju angel05 = new Kaiju("Ramiel", "Eva01_3d", 55, 155, 0, 350, 45, 2);
 
 They have methods for cheking their HP status and attack which can get NPC type or Tree. For Npc variant - damage to the chosen Npc, for Tree its getting status "destroyed"
 ```
-checkHPstatus();
+npc.checkHPstatus();
+npc.attack(tree);
+npc.attack(npc);
 ```
+
+I had a method printNPCInfo, but it gets String List, but its too uncomfortable to create a variable a put there data every time manualy, so for this problem Adapter pattern has been chosed.
+
+Method getData gets params from Npc and returns String List so we could use it in printNPCInfo.
+```
+Adapter.NPCInfo.printNPCInfo( Adapter.getData( npc ) );
+```
+![alt text](https://i.imgur.com/LBOMIjJ.png "")
+
