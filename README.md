@@ -1,6 +1,6 @@
 # TMPS_LabN2
 ### Java version 8 update 201 (Build 1.8.0_201-b09)
-* Adapter, Bridge, Facade, Flyweight, Proxy.*
+*Adapter, Bridge, Facade, Flyweight, Proxy.*
 ___
 It is a laboratory work by number 2, where 5 template have been used.
 The conception of the project:
