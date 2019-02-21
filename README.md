@@ -42,7 +42,16 @@ I had a method printNPCInfo, but it gets String List, but its too uncomfortable 
 
 Method getData gets params from Npc and returns String List so we could use it in printNPCInfo.
 ```
-Adapter.NPCInfo.printNPCInfo( Adapter.getData( npc ) );
+NPCInfo.printNPCInfo( Adapter.getData( npc ) );
 ```
 ![alt text](https://i.imgur.com/LBOMIjJ.png "")
 
+For Facade pattern in program were created a lot of classes with parameters which forms a Save system. For creating Save object we need send World, Npc, Trees, History object, which has their own needs for creation (time, map, data for example). But user dont have access to this part of program, and can use only 2 methods, createSaveFile and loadFromSaveFile.
+```
+Save save = Facade.SaveGame.createSaveFile();
+LoadGame.loadFromSaveFile(save);
+```
+Also program has an "implementation" for Cloud save upload/download by Proxy pattern. Program has 2 classes: Server and ProxyMod. We have access only to proxyMod which gaves possibility to ask Proxy to load or download save from/to Server. Proxy getting Save object and trying to access serverm, if operation succeeded Server tells it to Proxy, and ProxyMod does the same to the user.
+```
+ProxyMod.loadToServerSave(save);
+```
